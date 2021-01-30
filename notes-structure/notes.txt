@@ -1,6 +1,0 @@
-NavBar
-	- At the beginning positionated on top.
-	- Hamburguer menu responsive.
-	- When scrolling after 100vh, becomes fixed on top.
-	- act-btn (the same button for all the page)
-

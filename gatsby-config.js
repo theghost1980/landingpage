@@ -1,15 +1,24 @@
 module.exports = {
+  flags: {
+    DEV_SSR: false
+  },
   siteMetadata: {
-    title: "landingPage",
+    author: "Saturno Mangieri",
+    urlAuthor: "https://saturnoman.com/",
+    siteUrl: "http://www.mylandingpage.com",
+    websiteUrl: "http://www.mylandingpage.com",
+    description: "a Landing Template page multi purpose, ideal for startup companies, digital products, physical products. Fully customizable from datoCMS content models. Made by Saturno Mangieri using Gatsbyjs, ReactJs, CSS & Javascript. SEO friendly.",
+    keywords: [
+      `landing page`, `landing-page`, `marketing`, `the best seo`
+    ],
   },
   plugins: [
     {
       resolve: "gatsby-source-datocms",
       options: {
-        apiToken: "69a163ed2e4593b067d283a5686e75",
+        apiToken: "bea54e14f6fbafc2f09631b50af8ee",
       },
     },
-    "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
@@ -19,8 +28,8 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
+    "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-filesystem",
       options: {
