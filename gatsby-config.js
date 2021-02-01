@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   flags: {
     DEV_SSR: false
@@ -5,8 +9,8 @@ module.exports = {
   siteMetadata: {
     author: "Saturno Mangieri",
     urlAuthor: "https://saturnoman.com/",
-    siteUrl: "http://www.mylandingpage.com",
-    websiteUrl: "http://www.mylandingpage.com",
+    siteUrl: "https://www.mylandingpage.com",
+    websiteUrl: "https://www.mylandingpage.com",
     description: "a Landing Template page multi purpose, ideal for startup companies, digital products, physical products. Fully customizable from datoCMS content models. Made by Saturno Mangieri using Gatsbyjs, ReactJs, CSS & Javascript. SEO friendly.",
     keywords: [
       `landing page`, `landing-page`, `marketing`, `the best seo`
@@ -16,7 +20,7 @@ module.exports = {
     {
       resolve: "gatsby-source-datocms",
       options: {
-        apiToken: "bea54e14f6fbafc2f09631b50af8ee",
+        apiToken: `${process.env.api_token}`,
       },
     },
     "gatsby-plugin-sharp",

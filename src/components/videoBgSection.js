@@ -92,7 +92,7 @@ const Videobgsection = () => {
                 />
             </div>
             <div className="contentVideo">
-                <h1 className="contrastTitle heading">{_artVideoData.title}</h1>
+                <h1 className="contrastTitle subHeading specialShadows">{_artVideoData.title}</h1>
                 <h2 className="contrastTitle subHeading">{_artVideoData.subTitle}</h2>
                 <div className="contrastText readingText paragraphFont"
                     dangerouslySetInnerHTML={{

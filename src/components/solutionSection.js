@@ -43,7 +43,7 @@ const SolutionSection = () => {
             {
                 solutions.map(({node: solution}) => {
                 return (
-                    <li key={solution.id} className="liItem">
+                    <li key={solution.id} className="liItem solutionLi">
                     <div className="solutionCont">
                         <div className="solutionImgCont">
                             <img src={data.logoSVGWhite.publicURL} className="imgLogoSVG" alt="Our solution is the Best" />

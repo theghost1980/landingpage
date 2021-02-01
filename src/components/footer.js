@@ -42,6 +42,11 @@ const Footer = () => {
                 extension
                 id
             }
+            logoSVGCWhite: file(relativePath: {eq: "logoWhite.svg"}) {
+                publicURL
+                extension
+                id
+            }
           }
         `
     )
@@ -49,6 +54,7 @@ const Footer = () => {
     const footerMenu = data.footerMenu.edges;
     const siteLocal = data.siteLocalData;
     const site = data.siteConfig;
+    const logoSource = data.logoSVGColor.publicURL;
 
     return (
         <footer>
@@ -56,7 +62,7 @@ const Footer = () => {
                 <div className="logoFooterImgCont">
                     {/* <Img fluid={site.logoMenu.fluid} className="logoImgFooter" /> */}
                     <Link to="/">
-                        <img src={data.logoSVGColor.publicURL} className="imgLogoSVGFooter" alt="Our solution is the Best" />
+                        <img src={logoSource} className="imgLogoSVGFooter" alt="Our solution is the Best" />
                     </Link>
                 </div>
                 <ul className="ulHorizontal noJustAlign mediaAdJustWid">

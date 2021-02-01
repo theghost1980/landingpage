@@ -70,6 +70,9 @@
     --paddingContentMax: 30px;
     --paddingContentMin: 10px;
     --margin10: 10px;
+    --borderDarkColor: 1px solid var(--backgroundColorBase);
+    --marginBottomSection: 25px;
+    --marginTopSection: 25px;
     /* end borders, margins, paddgins general */
 
     /* shadows, box-shadows */
@@ -77,6 +80,8 @@
     /* end shadows, box-shadows */
 
     /* fonts,color fonts */
+    --backgroundColorComp2: #E56399;
+    --backgroundColorCompLighted: rgb(222, 236, 248);
     --backgroundColorDark: #08282B;
     --backgroundColorBase: #08282B;
     --backgroundColorCompl: #B4D4EE;
@@ -110,7 +115,7 @@ html,body {
     margin: 0px;
     width: 100%;
     height: 100%;
-    /* background-color: var(--backgroundColorBase); */
+    background-color: var(--backgroundColorCompLighted);
 }
 
 /* ++++++++++++++++++++++++++++++++ */
@@ -351,8 +356,6 @@ nav {
     flex-direction: row; 
     list-style: none;
     padding-inline-start: 0px;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     transition: all 0.3s ease;
     /* font-family: ${constants.fontSecodanry}; */
@@ -480,10 +483,18 @@ nav {
     flex-direction: column;
     max-width: 350px;
     height: 500px;
+    margin-bottom: var(--marginBottomSection);
+}
+.solutionContentCont {
+    background-color: var(--backgroundColorLight);
+    padding-left: var(--paddingContentMin);
+    padding-right: var(--paddingContentMin);
+    padding-bottom: var(--paddingContentMin);
 }
 .solutionImgCont {
     position: relative;
-    width: 340px;
+    /* width: 340px; */
+    width: 100%;
     height: 340px;
 }
 .imgSolution {
@@ -516,6 +527,7 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: var(--marginBottomSection);
 }
 .videoCont {
     width: 50%;
@@ -564,6 +576,7 @@ nav {
     height: 150px;
 }
 .imgTrust {
+    border-radius: var(--borderRadiusG);
     display: block;
     width: 100%;
     height: 100%;
@@ -617,6 +630,7 @@ nav {
 
 /* Footer section */
 footer {
+    margin-top: var(--marginTopSection);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -659,14 +673,241 @@ footer {
     display: flex;
     flex-direction: column;
     width: 200px;
-    height: 100px;
+    min-height: 200px;
     align-items: flex-start;
     padding: var(--margin10);
 }
 /* end footer section */
 
 /* Media queries support */
+@media only screen and (min-width:1441px){ 
+    .logoNavBarContainer {
+        width: 280px;
+    }
+    .contentHeroContainer {
+        padding: calc(var(--paddingContentMin)*4);
+        text-shadow: 1px 1px var(--backgroundColorDark);
+    }
+    .heading {
+        font-size: var(--SizeFontGiant);
+    }
+    .subHeading {
+        font-size: var(--xxxSizeFont);
+    }
+    .readingText {
+        font-size: calc(var(--xxSizeFont)*0.9);
+    }
+    .smallText {
+        font-size: x-large;
+    }
+    #solutions > ul {
+        align-items: center;
+        justify-content: center;
+    }
+    .solutionCont {
+        position: relative;
+        height: 100%;
+    }
+    .solutionLi {
+        height: 900px;
+    }
+    .solutionContentCont {
+        height: 100%;
+    }
+    .imgTrustContainer {
+        width: 250px;
+        height: 250px;
+    }
+    .imgTrust {
+        border-radius: calc(2*var(--borderRadiusG));
+    }
+    .contentProductCont {
+        width: 30%;
+    }
+    .imgProductContainer {
+        width: 100%;
+        height: auto;
+    }
+    .logoFooterImgCont {
+        width: 400px;
+        height: 310px;
+    }
+    .imgLogoSVGFooter {
+        height: 80%;
+    }
+    footer {
+        height: auto;
+    }
+    .footerRow {
+        height: auto;
+        align-items: unset;
+    }
+    .footerSubMenuCont {
+        min-height: 200px;
+    }
+}
 @media only screen and (max-width:1440px){ 
+    .logoNavBarContainer {
+        width: 220px;
+    }
+    .contentHeroContainer {
+        padding: calc(var(--paddingContentMin)*4);
+        text-shadow: 1px 1px var(--backgroundColorDark);
+    }
+    .heading {
+        font-size: var(--SizeFontGiant);
+    }
+    .subHeading {
+        font-size: var(--xxSizeFont);
+    }
+    .readingText {
+        font-size: var(--xSizeFont);
+    }
+    .smallText {
+        font-size: initial;
+    }
+    #solutions > ul {
+        align-items: center;
+        justify-content: center;
+    }
+    .solutionCont {
+        position: relative;
+        height: 100%;
+    }
+    .solutionLi {
+        height: 600px;
+    }
+    .solutionContentCont {
+        height: 100%;
+    }
+    .trustSectionContainer > ul {
+        justify-content: center;
+    }
+    .imgTrustContainer {
+        width: 200px;
+        height: 200px;
+    }
+    .imgTrust {
+        border-radius: calc(2*var(--borderRadiusG));
+    }
+    .contentProductCont {
+        width: 30%;
+    }
+    .imgProductContainer {
+        width: 100%;
+        height: auto;
+    }
+    .logoFooterImgCont {
+        width: 380px;
+        height: 180px;
+    }
+    .imgLogoSVGFooter {
+        left: 30px;
+        height: 80%;
+        width: 80%;
+    }
+    footer {
+        height: auto;
+    }
+    .footerRow {
+        height: auto;
+        align-items: unset;
+    }
+    .footerSubMenuCont {
+        min-height: 150px;
+    }
+}
+@media only screen and (max-width:1024px){ 
+    .logoNavBarContainer {
+        width: 200px;
+    }
+    .contentHeroContainer {
+        padding: calc(var(--paddingContentMin)*4);
+        text-shadow: 1px 1px var(--backgroundColorDark);
+    }
+    .heading {
+        font-size: var(--SizeFontGiant);
+    }
+    .subHeading {
+        font-size: var(--xxSizeFont);
+    }
+    .readingText {
+        font-size: var(--xSizeFont);
+    }
+    .smallText {
+        font-size: initial;
+    }
+    #solutions > ul {
+        align-items: center;
+        justify-content: center;
+    }
+    .solutionCont {
+        position: relative;
+        height: 100%;
+    }
+    .solutionLi {
+        height: 600px;
+    }
+    .solutionContentCont {
+        height: 100%;
+    }
+    .trustSectionContainer > ul {
+        justify-content: center;
+    }
+    .imgTrustContainer {
+        width: 150px;
+        height: 150px;
+    }
+    .imgTrust {
+        border-radius: calc(2*var(--borderRadiusG));
+    }
+    .contentProductCont {
+        width: 30%;
+    }
+    .imgProductContainer {
+        width: 100%;
+        height: auto;
+    }
+    .logoFooterImgCont {
+        width: 380px;
+        height: 180px;
+    }
+    .imgLogoSVGFooter {
+        left: 30px;
+        height: 80%;
+        width: 80%;
+    }
+    footer {
+        height: auto;
+    }
+    .footerRow {
+        height: auto;
+        align-items: unset;
+    }
+    .footerSubMenuCont {
+        min-height: 150px;
+    }
+    .logoMenuFooter {
+        flex-direction: column;
+    }
+    .logoMenuFooter > ul {
+        justify-content: center;
+    }
+}
+@media only screen and (max-width:768px){ 
+    .logoNavBarContainer {
+        width: 200px;
+    }
+    .mobileShrink, .menuCont {
+        width: 50px;
+        height: 50px;
+    }
+    .mobileShrink:hover{ 
+        width: 220px;
+    }
+    nav {
+        flex-direction: column;
+    }
     .contentHeroContainer {
         padding: calc(var(--paddingContentMin)*4);
         text-shadow: 1px 1px var(--backgroundColorDark);
@@ -684,15 +925,121 @@ footer {
         font-size: initial;
     }
     #solutions > ul {
-        align-items: unset;
+        align-items: center;
+        justify-content: center;
     }
     .solutionCont {
+        max-width: unset;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        flex-direction: row;
+    }
+    .solutionLi {
+        flex-direction: row;
+        width: 90%;
+        height: 400px;
+    }
+    .solutionContentCont {
+        width: 100%;
+        height: 330px;
+    }
+    .imgSolution {
+        height: unset;
+    }
+    .videoBgSectionCont {
+        height: 1000px;
+    }
+    .videoContentWrapper {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .videoCont {
+        width: 98%;
+        height: 400px;
+    }
+    .contentVideo {
+        width: 90%;
+    }
+    .trustSectionContainer > ul {
+        justify-content: center;
+    }
+    .imgTrustContainer {
+        width: 150px;
+        height: 150px;
+    }
+    .imgTrust {
+        border-radius: calc(2*var(--borderRadiusG));
+    }
+    .contentProductCont {
+        width: 30%;
+    }
+    .imgProductContainer {
+        width: 100%;
         height: auto;
     }
+    .buyBgSectionCont {
+        height: 1000px;
+    }
+    .buySectionContentContainer {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .contentBuySectionCont {
+        width: 90%;
+    }
+    .contentProductCont {
+        width: 60%;
+    }
+    .logoFooterImgCont {
+        width: 380px;
+        height: 180px;
+    }
+    .imgLogoSVGFooter {
+        left: 30px;
+        height: 80%;
+        width: 80%;
+    }
+    footer {
+        height: auto;
+    }
+    .footerRow {
+        height: auto;
+        align-items: unset;
+    }
+    .footerSubMenuCont {
+        min-height: 150px;
+    }
+    .logoMenuFooter {
+        flex-direction: column;
+    }
+    .logoMenuFooter > ul {
+        justify-content: center;
+    }
 }
-@media only screen and (max-width:1024px){ 
+/* @media only screen and (max-width:705px){ 
+    .solutionContentCont {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+} */
+@media only screen and (max-width:580px){ 
+    .logoNavBarContainer {
+        width: 200px;
+    }
+    .mobileShrink, .menuCont {
+        width: 50px;
+        height: 50px;
+    }
+    .mobileShrink:hover{ 
+        width: 180px;
+    }
+    nav {
+        flex-direction: column;
+    }
     .contentHeroContainer {
-        padding: calc(var(--paddingContentMin)*3);
+        padding: calc(var(--paddingContentMin)*4);
         text-shadow: 1px 1px var(--backgroundColorDark);
     }
     .heading {
@@ -702,157 +1049,178 @@ footer {
         font-size: var(--xSixeFont);
     }
     .readingText {
-        font-size: large;
+        font-size: initial;
+    }
+    .smallText {
+        font-size: small;
+    }
+    #solutions > ul {
+        align-items: center;
+        justify-content: center;
+    }
+    .solutionCont {
+        max-width: unset;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        flex-direction: row;
+    }
+    .solutionLi {
+        flex-direction: row;
+        width: 90%;
+        height: 350px;
+    }
+    .solutionContentCont {
+        width: 100%;
+        height: auto;
+    }
+    .imgSolution {
+        height: unset;
     }
     .videoBgSectionCont {
-        height: 90vh;
+        height: 1000px;
+    }
+    .videoContentWrapper {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .videoCont {
+        width: 98%;
+        height: 400px;
+    }
+    .contentVideo {
+        width: 90%;
+        padding: var(--paddingContentMin);
+    }
+    .trustContent {
+        padding: 0px;
+        margin: var(--paddingContentMin);
+    }
+    .trustSectionContainer > ul {
+        justify-content: center;
+    }
+    .imgTrustContainer {
+        width: 150px;
+        height: 150px;
+    }
+    .imgTrust {
+        border-radius: calc(2*var(--borderRadiusG));
+    }
+    .contentProductCont {
+        width: 30%;
+    }
+    .imgProductContainer {
+        width: 100%;
+        height: auto;
+    }
+    .buyBgSectionCont {
+        height: 1000px;
+    }
+    .buySectionContentContainer {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .contentBuySectionCont {
+        width: 90%;
+    }
+    .contentProductCont {
+        width: 60%;
+    }
+    .logoFooterImgCont {
+        width: 380px;
+        height: 180px;
+    }
+    .imgLogoSVGFooter {
+        left: 30px;
+        height: 80%;
+        width: 80%;
+    }
+    footer {
+        height: auto;
     }
     .footerRow {
+        height: auto;
         align-items: unset;
     }
-    .footerRow > ul {
-        justify-content: unset;
-        padding-inline-start: 40px;
+    .footerSubMenuCont {
+        min-height: 150px;
+    }
+    .logoMenuFooter {
+        flex-direction: column;
+    }
+    .logoMenuFooter > ul {
+        justify-content: center;
+    }
+    .centeredDiv > .ulHorizontal {
+        justify-content: center;
     }
 }
-@media only screen and (max-width:768px){ 
+@media only screen and (max-width:425px){ 
+    .logoNavBarContainer {
+        width: 200px;
+    }
+    .mobileShrink, .menuCont {
+        width: 50px;
+        height: 50px;
+    }
+    .mobileShrink:hover{ 
+        width: 180px;
+    }
+    nav {
+        flex-direction: column;
+    }
+    /* .contentHeroContainer {
+        padding: calc(var(--paddingContentMin)*4);
+        text-shadow: 1px 1px var(--backgroundColorDark);
+    } */
+    .heroBgChildContainer {
+        align-items: center;
+    }
+    .width50 {
+        width: 80%;
+    }
     .heading {
-        font-size: xx-large;
+        font-size: var(--xxSizeFont);
     }
     .subHeading {
-        font-size: x-large;
+        font-size: var(--xSixeFont);
     }
     .readingText {
         font-size: initial;
     }
-    .contentHeroContainer {
-        padding: calc(var(--paddingContentMin)*2);
-        text-shadow: 1px 1px var(--backgroundColorDark);
+    .smallText {
+        font-size: small;
     }
-    .shadowBtn {
-        box-shadow: 0px 1px 5px 1px var(--backgroundColorLight);
+    #solutions > ul {
+        align-items: center;
+        justify-content: center;
     }
     .solutionCont {
         max-width: unset;
-        /* width: 90%; */
-        flex-direction: row;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+    }
+    .solutionLi {
+        flex-direction: column;
+        width: 90%;
         height: auto;
-        margin: 0 auto;
-        flex-wrap: wrap-reverse;
-        justify-content: center;
-        align-items: center;
     }
     .solutionContentCont {
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        padding: var(--paddingContentMax);
-        justify-content: center;
-        align-items: center;
-        /* margin: 0 auto; */
-    }
-    .videoBgSectionCont {
-        height: 700px;
-    }
-    .videoContentWrapper {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: unset;
-    }
-    .videoCont {
-        margin-top: calc(2*var(--margin10));
-        width: 80%;
-        height: 300px;
-    }
-    .contentVideo {
-        width: 90%;
+        width: 100%;
         height: auto;
         padding: 0px;
     }
-    .trustSectionContainer {
-        flex-direction: column-reverse;
+    .solutionContentCont > h3, .solutionContentCont > .paragraphFont {
+        margin-left: var(--paddingContentMin);
+        margin-right: var(--paddingContentMin);
     }
-    .trustContent {
-        width: 90%;
-    }
-    .buySectionContentContainer {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: unset;
-        align-items: unset;
-    }
-    .contentProductCont {
-        padding: 0px;
-        height: 50vh;
-        flex-direction: row;
-        width: 95%;
-        flex-wrap: wrap;
-    }
-    .contentBuySectionCont {
-        width: 98%;
-        height: 50vh;
-        text-align: center;
-    }
-    .innerContentProduct {
-        display: flex;
-        flex-direction: column;
-        max-width: 300px;
-        height: auto;
-        text-align: center;
-    }
-    .imgProductContainer {
-        width: 250px;
-        height: 250px;
-    }
-    .logoMenuFooter {
-        flex-direction: column;
-    }
-    .logoFooterImgCont {
-        margin-top: calc(2*var(--margin10));
-    }
-    .mediaAdJustWid {
-        justify-content: center;
-        width: 90%;
-    }
-    .footerSubMenuCont {
-        padding: 0px;
-        width: auto;
-    }
-    .paddingXtraLi {
-        margin: var(--margin10);
-    }
-    footer > .footerRow {
-        justify-content: center;
-        align-items: center;
-    }
-}
-@media only screen and (max-width:705px){ 
-    .solutionContentCont {
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-    }
-}
-@media only screen and (max-width:580px){ 
-    .buyBgSectionCont {
-        height: 740px;
-        justify-content: center;
-        align-items: center;
-    }
-}
-@media only screen and (max-width:425px){ 
-    .contentHeroContainer {
-        padding: calc(var(--paddingContentMin)*2);
-        text-shadow: 1px 1px var(--backgroundColorDark);
-    }
-    .smallText {
-        font-size: smaller;
-    }
-    .shadowBtn {
-        box-shadow: 0px 1px 5px 1px var(--backgroundColorLight);
+    .imgSolution {
+        width: 100%;
     }
     .videoBgSectionCont {
-        height: 850px;
+        height: 1000px;
     }
     .videoContentWrapper {
         flex-direction: column;
@@ -860,128 +1228,215 @@ footer {
     }
     .videoCont {
         width: 98%;
-        height: 350px;
+        height: 400px;
     }
     .contentVideo {
         width: 90%;
-        height: auto;
-        padding: 0px;
-    }
-    .trustSectionContainer {
-        flex-direction: column;
+        padding: var(--paddingContentMin);
     }
     .trustContent {
-        width: 90%;
-    }
-    .buySectionContentContainer {
-        flex-direction: column-reverse;
-        flex-wrap: nowrap;
-    }
-    .contentProductCont {
         padding: 0px;
-        height: 50vh;
+        margin: var(--paddingContentMin);
     }
-    .contentBuySectionCont {
-        width: 98%;
-        height: 50vh;
-        text-align: center;
+    .trustSectionContainer > ul {
+        justify-content: center;
     }
-    .imgProductContainer {
+    .imgTrustContainer {
         width: 150px;
         height: 150px;
     }
+    .imgTrust {
+        border-radius: calc(2*var(--borderRadiusG));
+    }
+    .contentProductCont {
+        width: 30%;
+    }
+    .imgProductContainer {
+        width: 100%;
+        height: auto;
+    }
+    .buyBgSectionCont {
+        height: 1000px;
+    }
+    .buySectionContentContainer {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .contentBuySectionCont {
+        width: 90%;
+    }
+    .contentProductCont {
+        width: 60%;
+    }
+    .logoFooterImgCont {
+        width: 380px;
+        height: 180px;
+    }
+    .imgLogoSVGFooter {
+        left: 30px;
+        height: 80%;
+        width: 80%;
+    }
+    footer {
+        height: auto;
+    }
+    .footerRow {
+        height: auto;
+        align-items: unset;
+    }
+    .footerSubMenuCont {
+        min-height: 150px;
+    }
     .logoMenuFooter {
         flex-direction: column;
     }
-    .logoFooterImgCont {
-        margin-top: calc(2*var(--margin10));
+    .logoMenuFooter > ul {
+        justify-content: center;
     }
-    .mediaAdJustWid {
-        justify-content: unset;
-        width: 300px;
-    }
-    .footerSubMenuCont {
-        padding: 0px;
-        width: auto;
-    }
-    .paddingXtraLi {
-        margin: var(--margin10);
+    .centeredDiv > .ulHorizontal {
+        justify-content: center;
     }
 }
 @media only screen and (max-width:375px){
+    .logoNavBarContainer {
+        width: 200px;
+    }
+    .mobileShrink, .menuCont {
+        width: 50px;
+        height: 50px;
+    }
+    .mobileShrink:hover{ 
+        width: 240px;
+    }
+    nav {
+        flex-direction: column;
+    }
     .contentHeroContainer {
         padding: calc(var(--paddingContentMin)*2);
         text-shadow: 1px 1px var(--backgroundColorDark);
     }
-    .shadowBtn {
-        box-shadow: 0px 2px 5px 1px var(--backgroundColorLight);
+    .heroBgChildContainer {
+        align-items: center;
+    }
+    .width50 {
+        width: 80%;
+    }
+    .heading {
+        font-size: var(--xxSizeFont);
+    }
+    .subHeading {
+        font-size: var(--xSixeFont);
+    }
+    .readingText {
+        font-size: initial;
+    }
+    .smallText {
+        font-size: small;
+    }
+    #solutions > ul {
+        align-items: center;
+        justify-content: center;
+    }
+    .solutionCont {
+        max-width: unset;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+    }
+    .solutionLi {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+    .solutionContentCont {
+        width: 100%;
+        height: auto;
+        padding: 0px;
+    }
+    .solutionContentCont > h3, .solutionContentCont > .paragraphFont {
+        margin-left: var(--paddingContentMin);
+        margin-right: var(--paddingContentMin);
+    }
+    .solutionImgCont {
+        height: 100%;
+    }
+    .imgSolution {
+        width: 100%;
     }
     .videoBgSectionCont {
-        height: 900px;
+        height: 1000px;
     }
     .videoContentWrapper {
         flex-direction: column;
         flex-wrap: nowrap;
     }
     .videoCont {
-        width: 98%;
-        height: 300px;
+        width: 90%;
+        height: 320px;
     }
     .contentVideo {
         width: 90%;
-        height: auto;
-        padding: 0px;
-    }
-    .trustSectionContainer {
-        flex-direction: column;
+        padding: var(--paddingContentMin);
     }
     .trustContent {
-        width: 80%;
+        padding: 0px;
+        margin: var(--paddingContentMin);
+    }
+    .trustSectionContainer > ul {
+        justify-content: center;
+    }
+    .imgTrustContainer {
+        width: 150px;
+        height: 150px;
+    }
+    .imgTrust {
+        border-radius: calc(2*var(--borderRadiusG));
+    }
+    .imgProductContainer {
+        width: 100%;
+        height: auto;
+    }
+    .buyBgSectionCont {
+        height: 1000px;
     }
     .buySectionContentContainer {
         flex-direction: column;
         flex-wrap: nowrap;
     }
-    .contentProductCont {
-        padding: 0px;
-        height: 50vh;
-    }
     .contentBuySectionCont {
-        width: 98%;
-        height: 50vh;
-        text-align: center;
+        width: 90%;
     }
-    .imgProductContainer {
-        width: 150px;
-        height: 150px;
+    .contentProductCont {
+        width: 80%;
     }
-    .heading {
-        font-size: x-large;
+    .logoFooterImgCont {
+        width: 300px;
+        height: 140px;
     }
-    .subHeading {
-        font-size: large;
+    .imgLogoSVGFooter {
+        left: 30px;
+        height: 80%;
+        width: 80%;
+    }
+    footer {
+        height: auto;
+    }
+    .footerRow {
+        height: auto;
+        align-items: unset;
+    }
+    .footerSubMenuCont {
+        min-height: 150px;
     }
     .logoMenuFooter {
         flex-direction: column;
     }
-    .logoFooterImgCont {
-        margin-top: calc(2*var(--margin10));
+    .logoMenuFooter > ul {
+        justify-content: center;
     }
-    .mediaAdJustWid {
-        justify-content: unset;
-        width: 300px;
-    }
-    .footerSubMenuCont {
-        padding: 0px;
-        width: auto;
-    }
-    .paddingXtraLi {
-        margin: var(--margin10);
-    }
-    .imgSolution {
-        width: 300px;
-        height: 300px;
-        margin: 0 auto;
+    .centeredDiv > .ulHorizontal {
+        justify-content: center;
     }
 }
 /* TODO max-width:320px */
