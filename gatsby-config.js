@@ -1,6 +1,4 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+require("dotenv").config();
 
 module.exports = {
   flags: {
@@ -8,7 +6,7 @@ module.exports = {
   },
   siteMetadata: {
     author: "Saturno Mangieri",
-    urlAuthor: "https://saturnoman.com/",
+    urlAuthor: "https://github.com/theghost1980",
     siteUrl: "https://www.mylandingpage.com",
     websiteUrl: "https://www.mylandingpage.com",
     description: "a Landing Template page multi purpose, ideal for startup companies, digital products, physical products. Fully customizable from datoCMS content models. Made by Saturno Mangieri using Gatsbyjs, ReactJs, CSS & Javascript. SEO friendly.",
